@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
 
-    <form id="formulario">
-            <input type="number" name="id" id="idPizza">
-            <input type="submit" id="Buscar" value="Buscar">
+    <form id="formulario" class="formulario ">
+            <input type="number" name="id" id="idPizza" class="Number" placeholder="Inserte el ID: ">
+            <input type="submit" id="Buscar" value="Buscar" class="Btn_Submin">
 
     </form>
+    <section class="contenedor">
+    <div class="card" id="card">
+        
+        <!-- <h2 class="nombre" id="nombre"></h2>
+        <img  alt="" class="PizzaImage" id="PizzaImage">
+        <h3 class="ingredientes" id="ingredientes"></h3>
+        <h3 class="Precio" id="precio"></h3> -->
+
+    </div>
+</section>
     
 
-
-    <script src="JS/app.js"></script>
-    <script src="JS/DB.js"></script>
-</body>
+ <script src="JS/app.js" type="module"></script>
 </html>

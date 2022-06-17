@@ -1,33 +1,26 @@
-const formulario = document.querySelector('#formulario')
-const IDPizza= document.querySelector('#idPizza')
+import { pizzas }  from "./DB.js";
+import { consultarDB } from "./Consulta.js";
 
-window.addEventListener ("load",()=>{
-    localStorage.setItem("pizzas", JSON.stringify(pizzas))
+
+
+const form = document.getElementById('formulario')
+
+window.addEventListener('load', () => {
+    const PizzaLS = JSON.stringify(pizzas)
+    localStorage.setItem('pizzas', PizzaLS)
+    
+    form.addEventListener('submit', buscarPizza)
 })
 
+function buscarPizza(e) {
+    e.preventDefault();
+    const id_pizza = document.getElementById('idPizza').value
+    if (!id_pizza) {
+     const Error= document.createElement('p')
+         console.log(Error);
+    } else {
+      consultarDB(id_pizza)
+      
 
-formulario.addEventListener("submit", (e) => {
-    e.preventDefault()
-
-
-    const PizzaLS = JSON.parse(localStorage.getItem("pizzas"))
-
-
-
-    const PizzasId = PizzaLS.find((pizza) => pizza.id == IDPizza.value);
-
-
-    if (IDPizza.value == "") {
-        alert("Debes ingresar un ID");
-        return;
-      }
-    console.log(IDPizza);
-
-
-    if (PizzasId == undefined) {
-        alert("No existe la pizza con el ID ingresado");
-        return;
-      }
-
-      console.log(PizzasId);
-})
+    }
+}
